@@ -1,0 +1,52 @@
+---
+const steps = [
+  {
+    number: "01",
+    title: "Créez votre compte",
+    description: "Inscription en moins de 3 minutes. Scannez votre pièce d'identité et c'est parti."
+  },
+  {
+    number: "02",
+    title: "Alimentez votre wallet",
+    description: "Déposez de l'argent par virement, carte bancaire ou mobile money en toute simplicité."
+  },
+  {
+    number: "03",
+    title: "Utilisez Neo partout",
+    description: "Payez, transférez et épargnez où que vous soyez, sans limites ni frontières."
+  }
+];
+
+interface Props {
+  variant?: 'default' | 'page';
+}
+
+const { variant = 'default' } = Astro.props;
+const sectionPadding = variant === 'page' ? 'pt-8 pb-24' : 'py-24';
+---
+
+<section id="how-it-works" class:list={[sectionPadding, 'bg-white']}>
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-sm font-semibold text-neo-secondary uppercase tracking-wider">Comment ça marche</span>
+      <h2 class="mt-3 text-3xl md:text-4xl font-bold text-neo-black">
+        Commencez en <span class="text-neo-primary">3 étapes</span>
+      </h2>
+      <p class="mt-4 text-neo-gray text-base md:text-lg">
+        Pas de paperasse, pas d'agence. Tout se fait depuis votre téléphone.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {steps.map((step) => (
+        <div class="relative text-center">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-neo-primary to-neo-secondary text-white text-xl font-bold shadow-lg shadow-neo-primary/25 relative z-10">
+            {step.number}
+          </div>
+          <h3 class="mt-6 text-xl font-bold text-neo-black">{step.title}</h3>
+          <p class="mt-3 text-neo-gray max-w-xs mx-auto leading-relaxed">{step.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

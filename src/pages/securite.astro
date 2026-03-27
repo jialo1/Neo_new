@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeading from '../components/PageHeading.astro';
+import Security from '../components/Security.astro';
+import CTA from '../components/CTA.astro';
+---
+
+<Layout
+  title="Sécurité — Neo"
+  description="Chiffrement, conformité PCI DSS et RGPD, surveillance anti-fraude : la sécurité Neo expliquée."
+>
+  <PageHeading
+    title="Sécurité"
+    description="Vos données et vos fonds sont protégés par des standards bancaires et une surveillance continue."
+    tone="white"
+  />
+  <Security variant="page" />
+  <CTA />
+</Layout>

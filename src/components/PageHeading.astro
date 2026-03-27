@@ -1,0 +1,33 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  /** Fond : léger gris-violet (neo-light) ou blanc pur en base */
+  tone?: 'light' | 'white';
+}
+
+const { title, description, tone = 'light' } = Astro.props;
+const baseTint = tone === 'white' ? 'from-white via-neo-light/40' : 'from-neo-light via-white';
+---
+
+<section class="relative overflow-hidden pt-24 md:pt-28 pb-14 md:pb-16 lg:pb-20 border-b border-neo-light/80">
+  <div class:list={['absolute inset-0 bg-gradient-to-br', baseTint, 'to-neo-secondary/10']}></div>
+  <div class="absolute top-0 right-0 w-[min(520px,90vw)] h-[min(520px,90vw)] bg-neo-secondary/15 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-0 left-0 w-[min(360px,70vw)] h-[min(360px,70vw)] bg-neo-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-6">
+    <nav class="text-sm text-neo-gray mb-6" aria-label="Fil d'Ariane">
+      <a href="/" class="hover:text-neo-primary transition-colors">Accueil</a>
+      <span class="mx-2 text-neo-gray/40">/</span>
+      <span class="text-neo-black font-medium">{title}</span>
+    </nav>
+    <h1 class="text-3xl md:text-4xl lg:text-[2.5rem] font-bold text-neo-black tracking-tight max-w-3xl">
+      {title}
+    </h1>
+    {description && (
+      <p class="mt-4 md:mt-5 text-neo-gray max-w-2xl text-base md:text-lg leading-relaxed">
+        {description}
+      </p>
+    )}
+  </div>
+</section>

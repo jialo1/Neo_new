@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeading from '../components/PageHeading.astro';
+import About from '../components/About.astro';
+import CTA from '../components/CTA.astro';
+---
+
+<Layout
+  title="À propos — Neo"
+  description="Neo rend la finance accessible : mission, chiffres clés et vision pour particuliers et entreprises."
+>
+  <PageHeading
+    title="À propos"
+    description="Une équipe engagée pour des services financiers simples, transparents et utiles au quotidien."
+    tone="white"
+  />
+  <About variant="page" />
+  <CTA />
+</Layout>
