@@ -1,0 +1,54 @@
+---
+const faqs = [
+  {
+    question: "Qu'est-ce que Neo ?",
+    answer: "Neo est une plateforme financière digitale qui révolutionne la façon dont les Sénégalais et les Africains gèrent leur argent. Nous offrons des services de transfert d'argent, de paiement, de carte virtuelle et bien plus encore, le tout depuis votre smartphone."
+  },
+  {
+    question: "Comment Neo protège mes données ?",
+    answer: "Votre compte est sécurisé par un chiffrement bancaire, une authentification renforcée et un système de contrôle intelligent en temps réel. Vous gardez le contrôle total sur vos accès et vos cartes."
+  },
+  {
+    question: "Est-ce que Neo propose le Tap to Pay ?",
+    answer: "Oui. Vous pouvez payer en sans contact avec votre téléphone lorsque la fonctionnalité est disponible, sans carte physique."
+  },
+  {
+    question: "Puis-je connecter Neo à d'autres services financiers ?",
+    answer: "Oui. Neo est conçue pour être compatible avec d'autres banques, wallets et plateformes. Vos fonds circulent librement entre apps, banques et services."
+  },
+  {
+    question: "Est-ce que je peux bloquer ou désactiver ma carte ?",
+    answer: "Oui. Vous pouvez verrouiller, déverrouiller ou supprimer une carte en un geste depuis l'app."
+  }
+];
+---
+
+<section id="faq" class="py-20 bg-white">
+  <div class="max-w-3xl mx-auto px-6">
+    <div class="text-center mb-14">
+      <span class="text-sm font-semibold text-neo-secondary uppercase tracking-wider">FAQ</span>
+      <h2 class="mt-3 text-3xl md:text-4xl font-bold text-neo-black">
+        Les réponses à vos <span class="text-neo-primary">questions</span>
+      </h2>
+      <p class="mt-4 text-neo-gray text-base md:text-lg">
+        Pour une information claire et sans confusion.
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      {faqs.map((faq, i) => (
+        <details class="group bg-neo-light rounded-xl border border-neo-light hover:border-neo-secondary/30 transition-colors">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5 text-neo-black font-medium select-none">
+            <span class="pr-4">{faq.question}</span>
+            <svg class="w-5 h-5 text-neo-gray shrink-0 transition-transform duration-200 group-open:rotate-45" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+            </svg>
+          </summary>
+          <div class="px-6 pb-5 text-neo-gray leading-relaxed">
+            {faq.answer}
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
