@@ -25,3 +25,16 @@
     -moz-osx-font-smoothing: grayscale;
   }
 }
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.partners-track {
+  animation: scroll-left 20s linear infinite;
+}
+
+.partners-track:hover {
+  animation-play-state: paused;
+}
